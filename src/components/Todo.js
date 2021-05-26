@@ -16,10 +16,16 @@ const Todo = ({ text, todo, todos, setTodos }) => {
     );
   };
   return (
-    <div>
-      <li className={`todo-item${todo.completed}? 'completed':''`}>{text}</li>
-      <button onClick={completeHandler}>complete</button>
-      <button onClick={deleteHandler}>delete</button>
+    <div className="todo">
+      <li className={`todo-item ${todo.completed ? 'completed' : ''}`}>
+        {text}
+      </li>
+      <button className="complete-btn" onClick={completeHandler}>
+        <i className="fas fa-check"></i>
+      </button>
+      <button className="trash-btn" onClick={deleteHandler}>
+        <i className="fas fa-trash"></i>
+      </button>
     </div>
   );
 };
